@@ -152,7 +152,7 @@ session_start();
   <!-- ✅ Main Content Section -->
   <div class="home-content">
     <div class="image-box">
-      <img src="2.jpg" alt="System Showcase">
+      <img src="{{ @asset('image/2.jpg') }}" alt="System Showcase">
     </div>
 
     <div class="description-container">

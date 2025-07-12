@@ -146,7 +146,7 @@
   <!-- Login Form -->
   <div class="login-form">
     <div class="text">LOGIN</div>
-    <form action="{{ route('login') }}" method="POST">
+    <form action="{{ route('login.auth') }}" method="POST">
       @csrf
       <div class="field"><i class="fas fa-envelope"></i><input type="email" name="email" placeholder="Email" required>
       </div>

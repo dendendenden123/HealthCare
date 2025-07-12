@@ -59,6 +59,6 @@ class AuthController extends Controller
         request()->session()->invalidate();    // Invalidate session
         request()->session()->regenerateToken(); // Prevent CSRF reuse
 
-        return redirect('/login');
+        return redirect('/');
     }
 }
