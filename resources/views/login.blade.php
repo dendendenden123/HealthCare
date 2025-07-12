@@ -1,32 +1,3 @@
-<?php
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-
-  $stmt = $conn->prepare("SELECT id, name, password_hash, role FROM users WHERE email = ?");
-  $stmt->bind_param("s", $email);
-  $stmt->execute();
-  $stmt->store_result();
-
-  if ($stmt->num_rows == 1) {
-    $stmt->bind_result($id, $name, $password_hash, $role);
-    $stmt->fetch();
-
-    if (password_verify($password, $password_hash)) {
-      session_start();
-      $_SESSION['user_id'] = $id;
-      $_SESSION['user_name'] = $name;
-      $_SESSION['user_role'] = $role;
-      echo "<script>alert('Login successful!'); window.location.href='dashboard.php';</script>";
-    } else {
-      echo "<script>alert('Incorrect password.');</script>";
-    }
-  } else {
-    echo "<script>alert('Email not found.');</script>";
-  }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -175,12 +146,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <!-- Login Form -->
   <div class="login-form">
     <div class="text">LOGIN</div>
-    <form method="POST">
+    <form action="{{ route('login') }}" method="POST">
+      @csrf
       <div class="field"><i class="fas fa-envelope"></i><input type="email" name="email" placeholder="Email" required>
       </div>
       <div class="field"><i class="fas fa-lock"></i><input type="password" id="password" name="password"
           placeholder="Password" required></div>
       <div class="show-password"><input type="checkbox" onclick="togglePassword()"> Show Password</div>
+      @if(session('error'))
+      <p style="color:red;">{{ session('error') }}</p>
+    @endif
       <button type="submit">LOGIN</button>
       <div class="link">Don't have an account? <a href="register">Sign Up</a></div>
     </form>

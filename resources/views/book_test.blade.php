@@ -1,25 +1,25 @@
 <?php
-session_start();
-require 'db.php';
+// session_start();
+// require 'db.php';
 
-if (!isset($_SESSION['user_id'])) {
-  header("Location: auth.html?form=login");
-  exit;
-}
+// if (!isset($_SESSION['user_id'])) {
+//   header("Location: auth.html?form=login");
+//   exit;
+// }
 
-$user_id = $_SESSION['user_id'];
+// $user_id = $_SESSION['user_id'];
 
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['service_id']) && is_array($_POST['service_id'])) {
-  $service_ids = $_POST['service_id'];
-  $stmt = $conn->prepare("INSERT INTO bookings (user_id, service_id, status) VALUES (?, ?, 'Pending')");
+// if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['service_id']) && is_array($_POST['service_id'])) {
+//   $service_ids = $_POST['service_id'];
+//   $stmt = $conn->prepare("INSERT INTO bookings (user_id, service_id, status) VALUES (?, ?, 'Pending')");
 
-  foreach ($service_ids as $service_id) {
-    $stmt->bind_param("ii", $user_id, $service_id);
-    $stmt->execute();
-  }
+//   foreach ($service_ids as $service_id) {
+//     $stmt->bind_param("ii", $user_id, $service_id);
+//     $stmt->execute();
+//   }
 
-  $success = "Selected test(s) booked successfully!";
-}
+//   $success = "Selected test(s) booked successfully!";
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
