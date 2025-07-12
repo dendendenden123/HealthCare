@@ -143,7 +143,7 @@ session_start();
           <li class="nav-item"><a class="nav-link active" href="contact">Contact</a></li>
           <li class="nav-item"><a class="nav-link active" href="service">Service</a></li>
           <li class="nav-item"><a class="nav-link active" href="register">Sign Up</a></li>
-          <li class="nav-item"><a class="nav-link active" href="login">Sign In</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/login">Sign In</a></li>
         </ul>
       </div>
     </div>
