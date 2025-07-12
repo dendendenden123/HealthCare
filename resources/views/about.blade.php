@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Welcome to HealthCare Diagnostic & Drug Testing System</title>
 
   <!-- Bootstrap & Material Design CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-material-design@4.1.3/dist/css/bootstrap-material-design.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-material-design@4.1.3/dist/css/bootstrap-material-design.min.css"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap-material-design@4.1.3/dist/js/bootstrap-material-design.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap-material-design@4.1.3/dist/js/bootstrap-material-design.min.js"></script>
 
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       $('body').bootstrapMaterialDesign();
     });
   </script>
@@ -29,7 +32,8 @@
       min-height: 100%;
       object-fit: cover;
       z-index: -2;
-      pointer-events: none; /* Prevent blocking clicks */
+      pointer-events: none;
+      /* Prevent blocking clicks */
     }
 
     body::before {
@@ -39,9 +43,11 @@
       left: 0;
       height: 100%;
       width: 100%;
-      background-color: rgba(255,255,255,0.2); /* Brighter overlay */
+      background-color: rgba(255, 255, 255, 0.2);
+      /* Brighter overlay */
       z-index: -1;
-      pointer-events: none; /* Prevent blocking clicks */
+      pointer-events: none;
+      /* Prevent blocking clicks */
     }
 
     body {
@@ -105,7 +111,7 @@
       background-color: #ffffff;
       padding: 25px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       position: relative;
       z-index: 1;
     }
@@ -147,6 +153,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- Video Background -->
@@ -158,18 +165,18 @@
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand fw-bold" href="index.php">Health Care Diagnostic</a>
+      <a class="navbar-brand fw-bold" href="index">Health Care Diagnostic</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.php">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about.php">About</a></li>
-          <li class="nav-item"><a class="nav-link active" href="contact.php">Contact</a></li>
-          <li class="nav-item"><a class="nav-link active" href="service.php">Service</a></li>
-          <li class="nav-item"><a class="nav-link active" href="register.php">Sign Up</a></li>
-          <li class="nav-item"><a class="nav-link active" href="login.php">Sign In</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="service">Service</a></li>
+          <li class="nav-item"><a class="nav-link active" href="register">Sign Up</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login">Sign In</a></li>
         </ul>
       </div>
     </div>
@@ -183,8 +190,10 @@
       <div class="left-column">
         <div class="description-box">
           <h3>About Our Health Care Diagnostic and Drug Testing Laboratory Management System</h3>
-          <p>This system helps our health care staff easily manage patient appointments, lab tests, and results in one place.
-            It sends SMS notifications to patients, making sure they don’t forget their appointments. The system keeps patient information safe and organized.</p>
+          <p>This system helps our health care staff easily manage patient appointments, lab tests, and results in one
+            place.
+            It sends SMS notifications to patients, making sure they don’t forget their appointments. The system keeps
+            patient information safe and organized.</p>
           <p>Our goal is to improve communication and make lab work faster and simpler for everyone.</p>
           If you have any questions, feel free to <a href="contact.php" class="text-info">contact us</a>.
         </div>
@@ -230,4 +239,5 @@
   </div>
 
 </body>
+
 </html>

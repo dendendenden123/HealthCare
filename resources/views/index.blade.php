@@ -3,21 +3,24 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Welcome to HealthCare Diagnostic & Drug Testing</title>
 
   <!-- Bootstrap & Material Design CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-material-design@4.1.3/dist/css/bootstrap-material-design.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-material-design@4.1.3/dist/css/bootstrap-material-design.min.css"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap-material-design@4.1.3/dist/js/bootstrap-material-design.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap-material-design@4.1.3/dist/js/bootstrap-material-design.min.js"></script>
 
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       $('body').bootstrapMaterialDesign();
     });
   </script>
@@ -32,7 +35,8 @@ session_start();
       min-height: 100%;
       object-fit: cover;
       z-index: -1;
-      filter: brightness(0.9); /* pahayag */
+      filter: brightness(0.9);
+      /* pahayag */
     }
 
     /* ✅ Main Content Styling */
@@ -61,10 +65,11 @@ session_start();
     }
 
     .description-box {
-      background-color: rgba(196, 185, 185, 0.9); /* brighter box */
+      background-color: rgba(196, 185, 185, 0.9);
+      /* brighter box */
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
       border: 4px solid hsla(120, 100%, 50%, 0.65);
       color: #000;
     }
@@ -118,56 +123,60 @@ session_start();
 
 <body>
 
-<!-- ✅ Background Video -->
-<video class="bg-video" autoplay muted loop>
-  <source src="1.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+  <!-- ✅ Background Video -->
+  <video class="bg-video" autoplay muted loop>
+    <source src="1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-<!-- ✅ Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="index.php">Health Care Diagnostic</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.php">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="about.php">About</a></li>
-        <li class="nav-item"><a class="nav-link active" href="contact.php">Contact</a></li>
-        <li class="nav-item"><a class="nav-link active" href="service.php">Service</a></li>
-        <li class="nav-item"><a class="nav-link active" href="register.php">Sign Up</a></li>
-        <li class="nav-item"><a class="nav-link active" href="login.php">Sign In</a></li>
-      </ul>
+  <!-- ✅ Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index">Health Care Diagnostic</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="service">Service</a></li>
+          <li class="nav-item"><a class="nav-link active" href="register">Sign Up</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login">Sign In</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- ✅ Main Content Section -->
-<div class="home-content">
-  <div class="image-box">
-    <img src="2.jpg" alt="System Showcase">
-  </div>
+  <!-- ✅ Main Content Section -->
+  <div class="home-content">
+    <div class="image-box">
+      <img src="2.jpg" alt="System Showcase">
+    </div>
 
-  <div class="description-container">
-    <div class="description-box">
-      <h1>Welcome to HealthCare Diagnostic & Drug Testing System</h1>
-      <p>
-        Our web-based Health Care Diagnostic and Drug Testing Laboratory Management System provides an efficient and secure platform 
-        for scheduling appointments, managing test records, and sending SMS reminders. 
-        Designed for both healthcare staff and patients, the system ensures accurate diagnostics, streamlined communication, 
-        and enhanced patient care. Say goodbye to missed appointments and paperwork—embrace modern digital health management today.
-      </p>
-      
+    <div class="description-container">
+      <div class="description-box">
+        <h1>Welcome to HealthCare Diagnostic & Drug Testing System</h1>
+        <p>
+          Our web-based Health Care Diagnostic and Drug Testing Laboratory Management System provides an efficient and
+          secure platform
+          for scheduling appointments, managing test records, and sending SMS reminders.
+          Designed for both healthcare staff and patients, the system ensures accurate diagnostics, streamlined
+          communication,
+          and enhanced patient care. Say goodbye to missed appointments and paperwork—embrace modern digital health
+          management today.
+        </p>
+
 
 
         <a href="register.php" class="cta-button book-button">Book Now</a>
-      
-      
+
+
+      </div>
     </div>
   </div>
-</div>
 
 </body>
+
 </html>

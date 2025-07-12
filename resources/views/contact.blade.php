@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Welcome to HealthCare Diagnostic & Drug Testing System</title>
 
   <!-- Bootstrap & Material Design CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-material-design@4.1.3/dist/css/bootstrap-material-design.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-material-design@4.1.3/dist/css/bootstrap-material-design.min.css"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap-material-design@4.1.3/dist/js/bootstrap-material-design.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap-material-design@4.1.3/dist/js/bootstrap-material-design.min.js"></script>
 
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       $('body').bootstrapMaterialDesign();
     });
   </script>
-  
+
   <style>
-    body, html {
+    body,
+    html {
       margin: 0;
       padding: 0;
       height: 100%;
@@ -41,7 +45,8 @@
 
     .home-content {
       padding: 40px 20px;
-      margin-top: 80px; /* 🔽 Adds space below navbar */
+      margin-top: 80px;
+      /* 🔽 Adds space below navbar */
       position: relative;
       z-index: 1;
     }
@@ -64,7 +69,7 @@
       background-color: rgba(7, 7, 7, 0.96);
       padding: 25px;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .description-box a {
@@ -99,18 +104,18 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand fw-bold" href="index.php">Health Care Diagnostic</a>
+      <a class="navbar-brand fw-bold" href="index">Health Care Diagnostic</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.php">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about.php">About</a></li>
-          <li class="nav-item"><a class="nav-link active" href="contact.php">Contact</a></li>
-          <li class="nav-item"><a class="nav-link active" href="service.php">Service</a></li>
-          <li class="nav-item"><a class="nav-link active" href="register.php">Sign Up</a></li>
-          <li class="nav-item"><a class="nav-link active" href="login.php">Sign In</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="service">Service</a></li>
+          <li class="nav-item"><a class="nav-link active" href="register">Sign Up</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login">Sign In</a></li>
         </ul>
       </div>
     </div>
@@ -155,4 +160,5 @@
     </div>
   </div>
 </body>
+
 </html>

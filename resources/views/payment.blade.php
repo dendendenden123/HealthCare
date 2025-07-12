@@ -3,28 +3,28 @@ session_start();
 require 'db.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: auth.html?form=login");
-    exit;
+  header("Location: auth.html?form=login");
+  exit;
 }
 
 $user_id = $_SESSION['user_id'];
 
 // Handle proof of payment upload
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['upload_proof'])) {
-    $booking_id = $_POST['booking_id'];
-    $target_dir = "uploads/";
-    $file_name = basename($_FILES["proof"]["name"]);
-    $target_file = $target_dir . time() . "_" . $file_name;
+  $booking_id = $_POST['booking_id'];
+  $target_dir = "uploads/";
+  $file_name = basename($_FILES["proof"]["name"]);
+  $target_file = $target_dir . time() . "_" . $file_name;
 
-    if (!is_dir($target_dir)) {
-        mkdir($target_dir, 0777, true);
-    }
+  if (!is_dir($target_dir)) {
+    mkdir($target_dir, 0777, true);
+  }
 
-    if (move_uploaded_file($_FILES["proof"]["tmp_name"], $target_file)) {
-        $stmt = $conn->prepare("UPDATE bookings SET payment_proof=?, payment_status='Paid' WHERE id=? AND user_id=?");
-        $stmt->bind_param("sii", $target_file, $booking_id, $user_id);
-        $stmt->execute();
-    }
+  if (move_uploaded_file($_FILES["proof"]["tmp_name"], $target_file)) {
+    $stmt = $conn->prepare("UPDATE bookings SET payment_proof=?, payment_status='Paid' WHERE id=? AND user_id=?");
+    $stmt->bind_param("sii", $target_file, $booking_id, $user_id);
+    $stmt->execute();
+  }
 }
 
 // Fetch bookings
@@ -49,16 +49,19 @@ $result = $query->get_result();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Payment</title>
   <!-- Bootstrap & Material Design -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-material-design@4.1.3/dist/css/bootstrap-material-design.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-material-design@4.1.3/dist/css/bootstrap-material-design.min.css"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap-material-design@4.1.3/dist/js/bootstrap-material-design.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap-material-design@4.1.3/dist/js/bootstrap-material-design.min.js"></script>
 
   <script>
     $(document).ready(function () {
@@ -66,13 +69,13 @@ $result = $query->get_result();
     });
 
     function openModal() {
-        document.getElementById("gcashModal").style.display = "flex";
+      document.getElementById("gcashModal").style.display = "flex";
     }
 
     function closeModal(event) {
-        if (event.target.classList.contains('modal') || event.target.classList.contains('close')) {
-            document.getElementById("gcashModal").style.display = "none";
-        }
+      if (event.target.classList.contains('modal') || event.target.classList.contains('close')) {
+        document.getElementById("gcashModal").style.display = "none";
+      }
     }
   </script>
 
@@ -85,7 +88,7 @@ $result = $query->get_result();
       top: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0, 0, 0, 0.6);
       justify-content: center;
       align-items: center;
     }
@@ -112,46 +115,47 @@ $result = $query->get_result();
     }
   </style>
 </head>
+
 <body class="bg-dark text-white">
 
-<div class="d-flex">
-  <!-- Sidebar -->
-  <aside class="bg-black p-4 vh-100" style="min-width: 220px;">
-    <h4 class="text-success mb-4">Lab Portal</h4>
-    <ul class="nav flex-column">
-      <li class="nav-item mb-2"><a class="nav-link text-white" href="dashboard.php">🏠 Dashboard</a></li>
-      <li class="nav-item mb-2"><a class="nav-link text-white" href="book_test.php">🧪 Book Test</a></li>
-      <li class="nav-item mb-2"><a class="nav-link text-white" href="appointments.php">📅 Appointments</a></li>
-      <li class="nav-item mb-2"><a class="nav-link text-white" href="payment.php">💳 Payment</a></li>
-      <li class="nav-item mb-2"><a class="nav-link text-white" href="profile.php">👤 Profile</a></li>
-      <li class="nav-item mb-2"><a class="nav-link text-white" href="logout.php">🚪 Logout</a></li>
-    </ul>
-  </aside>
+  <div class="d-flex">
+    <!-- Sidebar -->
+    <aside class="bg-black p-4 vh-100" style="min-width: 220px;">
+      <h4 class="text-success mb-4">Lab Portal</h4>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a class="nav-link text-white" href="dashboard">🏠 Dashboard</a></li>
+        <li class="nav-item mb-2"><a class="nav-link text-white" href="book_test">🧪 Book Test</a></li>
+        <li class="nav-item mb-2"><a class="nav-link text-white" href="appointments">📅 Appointments</a></li>
+        <li class="nav-item mb-2"><a class="nav-link text-white" href="payment">💳 Payment</a></li>
+        <li class="nav-item mb-2"><a class="nav-link text-white" href="profile">👤 Profile</a></li>
+        <li class="nav-item mb-2"><a class="nav-link text-white" href="logout">🚪 Logout</a></li>
+      </ul>
+    </aside>
 
-  <!-- Main Content -->
-  <main class="my-5 flex-grow-1 px-4">
-    <div class="card bg-white text-dark shadow-lg">
-      <div class="card-header bg-success text-white text-center">
-        <h3 class="mb-0">Your Payments</h3>
-      </div>
-      <div class="card-body">
-        <div class="text-end mb-3">
-          <button class="btn btn-success" onclick="openModal()">💳 View GCash QR Code</button>
+    <!-- Main Content -->
+    <main class="my-5 flex-grow-1 px-4">
+      <div class="card bg-white text-dark shadow-lg">
+        <div class="card-header bg-success text-white text-center">
+          <h3 class="mb-0">Your Payments</h3>
         </div>
-
-        <!-- GCash Modal -->
-        <div id="gcashModal" class="modal" onclick="closeModal(event)">
-          <div class="modal-content">
-            <span class="close" onclick="closeModal(event)">&times;</span>
-            <h4 class="text-dark">Scan to Pay via GCash</h4>
-            <img src="4.jpg" alt="GCash QR">
-            <p class="text-dark mt-3">After payment, upload your proof below.</p>
+        <div class="card-body">
+          <div class="text-end mb-3">
+            <button class="btn btn-success" onclick="openModal()">💳 View GCash QR Code</button>
           </div>
-        </div>
 
-        <?php if ($result->num_rows === 0): ?>
+          <!-- GCash Modal -->
+          <div id="gcashModal" class="modal" onclick="closeModal(event)">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal(event)">&times;</span>
+              <h4 class="text-dark">Scan to Pay via GCash</h4>
+              <img src="4.jpg" alt="GCash QR">
+              <p class="text-dark mt-3">After payment, upload your proof below.</p>
+            </div>
+          </div>
+
+          <?php if ($result->num_rows === 0): ?>
           <div class="alert alert-info text-center">No bookings found.</div>
-        <?php else: ?>
+          <?php else: ?>
           <div class="table-responsive">
             <table class="table table-bordered table-hover">
               <thead class="table-light">
@@ -165,15 +169,15 @@ $result = $query->get_result();
                 </tr>
               </thead>
               <tbody>
-              <?php while ($row = $result->fetch_assoc()): ?>
+                <?php  while ($row = $result->fetch_assoc()): ?>
                 <tr>
                   <td><?= htmlspecialchars($row['service_name']) ?></td>
                   <td><?= htmlspecialchars($row['booking_date']) ?></td>
                   <td>₱<?= number_format($row['price'], 2) ?></td>
                   <td>
                     <span class="badge bg-<?= 
-                      $row['status'] === 'Approved' ? 'success' : 
-                      ($row['status'] === 'Pending' ? 'info' : 'danger') ?>">
+                      $row['status'] === 'Approved' ? 'success' :
+      ($row['status'] === 'Pending' ? 'info' : 'danger') ?>">
                       <?= htmlspecialchars($row['status']) ?>
                     </span>
                   </td>
@@ -183,26 +187,28 @@ $result = $query->get_result();
                     </span>
                   </td>
                   <td>
-                    <?php if (empty($row['payment_proof'])): ?>
-                      <form method="POST" enctype="multipart/form-data" class="upload-form d-flex flex-column gap-2">
-                        <input type="hidden" name="booking_id" value="<?= $row['id'] ?>">
-                        <input type="file" name="proof" accept="image/*" class="form-control form-control-sm" required>
-                        <button type="submit" name="upload_proof" class="btn btn-sm btn-info">Upload</button>
-                      </form>
-                    <?php else: ?>
-                      <a class="btn btn-sm btn-outline-dark" href="<?= $row['payment_proof'] ?>" target="_blank">View Proof</a>
-                    <?php endif; ?>
+                    <?php    if (empty($row['payment_proof'])): ?>
+                    <form method="POST" enctype="multipart/form-data" class="upload-form d-flex flex-column gap-2">
+                      <input type="hidden" name="booking_id" value="<?= $row['id'] ?>">
+                      <input type="file" name="proof" accept="image/*" class="form-control form-control-sm" required>
+                      <button type="submit" name="upload_proof" class="btn btn-sm btn-info">Upload</button>
+                    </form>
+                    <?php    else: ?>
+                    <a class="btn btn-sm btn-outline-dark" href="<?= $row['payment_proof'] ?>" target="_blank">View
+                      Proof</a>
+                    <?php    endif; ?>
                   </td>
                 </tr>
-              <?php endwhile; ?>
+                <?php  endwhile; ?>
               </tbody>
             </table>
           </div>
-        <?php endif; ?>
+          <?php endif; ?>
+        </div>
       </div>
-    </div>
-  </main>
-</div>
+    </main>
+  </div>
 
 </body>
+
 </html>
